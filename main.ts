@@ -1,8 +1,12 @@
 input.onButtonPressed(Button.A, function () {
-    for (let index = 0; index < 48; index++) {
+    for (let index = 0; index < 100000; index++) {
         k = 1024 / 3
-        radio.sendNumber(pins.analogReadPin(AnalogReadWritePin.P0) / k * 5 + 0.98)
-        basic.pause(50)
+        I = pins.analogReadPin(AnalogReadWritePin.P0) / k * 5 + 0.78
+        radio.sendNumber(I)
+        basic.showIcon(IconNames.Heart)
+        basic.pause(100)
+        basic.clearScreen()
+        basic.pause(100)
     }
 })
 input.onButtonPressed(Button.B, function () {
